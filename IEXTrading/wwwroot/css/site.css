@@ -1,12 +1,12 @@
 ﻿body {
-    background-color: #CFC493;
+    background-color: #a9a5a5;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #006747;
+    color: #ffffff;
 }
 
 .nav-bar {
-    background-color: #006747;
-    color: #CFC493;
+    background-color: rgba(186, 181, 181, 0.57);
+    color: #ffffff;
     font-size: x-large;
 }
 

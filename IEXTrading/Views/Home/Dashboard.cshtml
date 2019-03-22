@@ -1,0 +1,76 @@
+﻿@{ViewData["Title"] = "Dashboard";}
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="wwwroot/css/site.css" />
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <h1> Stock Price Dashboard</h1>
+
+    <canvas id="mixed-chart" width="400" height="400"></canvas>
+
+    <script>
+        new Chart(document.getElementById("mixed-chart"), {
+            type: 'bar',
+            data: {
+                labels: ["3/19", "3/20", "3/21", "3/22", "Today"],
+                datasets:
+                    [{
+                        label: "stock1",
+                        type: "line",
+                        borderColor: "#8e5ea2",
+                        data: [408, 547, 675, 734, 800],
+                        fill: false
+                    },
+                    {
+                        label: "stock2",
+                        type: "line",
+                        borderColor: "#3e95cd",
+                        data: [133, 221, 783, 1200, 1000],
+                        fill: false
+                    },
+                    {
+                        label: "stock1",
+                        type: "bar",
+                        backgroundColor: "rgba(0,0,0,0.4)",
+                        data: [408, 547, 675, 734, 800],
+                    },
+                    {
+                        label: "stock2",
+                        type: "bar",
+                        backgroundColor: "rgba(0,0,0,0.4)",
+                        backgroundColorHover: "#3e95cd",
+                        data: [133, 221, 783, 1200, 1000]
+                    }]
+            },
+            options:
+            {
+                layout:
+                {
+                    padding:
+                    {
+                        left: 100,
+                        right: 100,
+                        top: 100,
+                        bottom: 100
+                    }
+                },
+                title:
+                {
+                    display: true,
+                    text: 'Stock Value (100s): Last 5 Days'
+                },
+                legend: { display: false }
+            }
+        });
+    </script>
+</body>
+</html>

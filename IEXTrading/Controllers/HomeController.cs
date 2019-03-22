@@ -36,6 +36,11 @@ namespace MVCTemplate.Controllers
         {
             return View();
         }
+        //add dashboard view
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
 
         /****
          * The Symbols action calls the GetSymbols method that returns a list of Companies.
