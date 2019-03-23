@@ -1,9 +1,7 @@
-﻿body {
-    background-color: #a9a5a5;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #ffffff;
+﻿html, body {
+    margin: 0;
+    padding: 0;
 }
-
 td {
     padding: 10px;
 }
@@ -13,8 +11,8 @@ table {
     border-collapse: separate;
 }
 h1 {
-    color: #F5F5F5;
-    font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    color: #fdbc00;
+    font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
     font-size: 80px;
     font-weight: 100;
 }
@@ -23,14 +21,14 @@ body {
     background-image: url("wwwroot/images/piggy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    font: "Gill Sans", "Gill Sans MT","sans-serif";
     font-size: 25px;
     font-weight: 100;
 }
 
 header {
-    color: #F5F5F5;
-    font: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    color: #fdbc00;
+    font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
     font-size: 25px;
     font-weight: 100;
 }
@@ -43,11 +41,12 @@ header {
     /* Style the text inside the navigation bar */
     .topnav a {
         float: left;
-        color: #f2f2f2;
+        color: #fdbc00;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
+        font: "Gill Sans", "Gill Sans MT","sans-serif";
     }
 
         /* Change the color of links on hover */
@@ -73,10 +72,10 @@ header {
 }
 
 article {
-    font: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
-    font-size: 24;
+    font-family: Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    font-size: 17px;
     font-weight: 400;
-    background-color: #E6F3F5;
+    background-color: #fdbc00;
     opacity: .65;
     padding-top: 20%;
     padding-left: 10%;
@@ -95,15 +94,13 @@ article {
     display: inline-block;
     font-size: 16px;
 }
-/* button formats*/
-.submit {
-    background-color: #333;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+
+.fbTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
