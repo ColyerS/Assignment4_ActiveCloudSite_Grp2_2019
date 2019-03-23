@@ -77,5 +77,31 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
 
             return Equities;
         }
+
+        /****
+         * Calls the IEX reference API to get a JSON string quote for that symbol.
+        ****/
+        public dynamic GetQuote(string symbol)
+        {
+            //URL Addition: stock/<symbol here>/quote
+            string IEXTrading_API_Quote = BASE_URL + "stock/" + symbol + "/quote";
+
+            //declare a dynamic variable to hold the JSON returned from the API.
+            dynamic quote = "";
+            //create the API call and call on it.
+            httpClient.BaseAddress = new Uri(IEXTrading_API_Quote);
+            HttpResponseMessage response = httpClient.GetAsync(IEXTrading_API_Quote).GetAwaiter().GetResult();
+            //if we get a positive response from the API throw everything into the dynamic variable.
+            if (response.IsSuccessStatusCode)
+            {
+                quote = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            }
+            //if we get a negative response from the API, put an error message in the returned variable.
+            if (response.IsSuccessStatusCode == false)
+            {
+                quote = "Symbol NA";
+            }
+            return quote;
+        }
     }
 }

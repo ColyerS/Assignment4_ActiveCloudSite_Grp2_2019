@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\dashboard.cshtml" />
+    <Content Remove="Views\Home\PortfolioOptions.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Home\PortfolioOptions.cshtml" />
     <None Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
 
