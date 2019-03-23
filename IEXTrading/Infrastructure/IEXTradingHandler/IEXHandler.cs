@@ -21,6 +21,34 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
         }
 
         /****
+          * Calls the IEX reference API to get the prices 
+         ****/
+        public List<Price> GetPrices()
+        {
+            string IEXTrading_API_PATH = BASE_URL + "stock/aapl/batch?types=chart&range=5d";
+            string priceList = "";
+
+            List<Price> prices = null;
+
+            httpClient.BaseAddress = new Uri(IEXTrading_API_PATH);
+            HttpResponseMessage response = httpClient.GetAsync(IEXTrading_API_PATH).GetAwaiter().GetResult();
+            if (response.IsSuccessStatusCode)
+            {
+                priceList = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            }
+
+            if (!priceList.Equals(""))
+            {
+                prices = JsonConvert.DeserializeObject<List<Price>>(priceList);
+                prices = prices.GetRange(0, 50);
+            }
+            return prices;
+        }
+
+
+
+
+        /****
          * Calls the IEX reference API to get the list of symbols. 
         ****/
         public List<Company> GetSymbols()
