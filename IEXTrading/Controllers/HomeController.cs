@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace MVCTemplate.Controllers
 {
-    
+
     public class HomeController : Controller
     {
         public ApplicationDbContext dbContext;
@@ -88,8 +88,8 @@ namespace MVCTemplate.Controllers
             //{
             //    TempData["Companies"] = "Fetch";
             //}
-            
-            
+
+
 
             return View(companies);
         }
@@ -129,6 +129,30 @@ namespace MVCTemplate.Controllers
             return View(tableCount);
         }
 
+        /* Saves the 5 day prices in database */
+        public IActionResult PopulatePrices()
+        {
+            string pricesData = HttpContext.Session.GetString(SessionKeyName);
+            List<Price> prices = null;
+            if (pricesData != "")
+            {
+                prices = JsonConvert.DeserializeObject<List<Price>>(pricesData);
+            }
+
+            foreach (Price price in prices)
+            {
+                dbContext.Prices.Add(price);
+            }
+            dbContext.SaveChanges();
+            ViewBag.dbSuccessComp = 1;
+            return View("Prices", prices);
+        }
+
+
+
+
+
+
         /****
          * Saves the Symbols in database.
         ****/
@@ -138,9 +162,9 @@ namespace MVCTemplate.Controllers
             List<Company> companies = null;
             if (companiesData != "")
             {
-                 companies = JsonConvert.DeserializeObject<List<Company>>(companiesData);
+                companies = JsonConvert.DeserializeObject<List<Company>>(companiesData);
             }
-            
+
             foreach (Company company in companies)
             {
                 //Database will give PK constraint violation error when trying to insert record with existing PK.
