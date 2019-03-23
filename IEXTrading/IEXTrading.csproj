@@ -6,8 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\about.cshtml" />
     <Content Remove="Views\Home\dashboard.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Home\login.cshtml" />
     <Content Remove="Views\Home\PortfolioOptions.cshtml" />
+    <Content Remove="Views\Home\signup.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,8 +30,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Login.cshtml" />
     <None Include="Views\Home\PortfolioOptions.cshtml" />
     <None Include="Views\Home\Dashboard.cshtml" />
+    <None Include="Views\Home\Signup.cshtml" />
   </ItemGroup>
 
 </Project>

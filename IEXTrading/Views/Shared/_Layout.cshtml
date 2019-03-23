@@ -3,27 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - TradingApp</title>
+    <title>@ViewData["Title"] | Investagon | </title>
     <link rel="stylesheet" href="~/css/site.css" />
     <script type="text/javascript" src="~/js/Chart.min.js"></script>
     <script type="text/javascript" src="~/lib/chartjs-plugin-annotation-master/chartjs-plugin-annotation.min.js"></script>
     <script type="text/javascript" src="~/js/site.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-bar">
-            <a asp-area="" asp-controller="Home" asp-action="Index">Home </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Symbols">Symbols </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Refresh">Refresh </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Dashboard">Dashboard </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="PortfolioOptions">Portfolio Options </a><text> | </text>
+    <nav id="navigation">
+        <div class="topnav">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            @*<a asp-area="" asp-controller="Home" asp-action="Symbols">Symbols </a><text> | </text>*@
+            @*<a asp-area="" asp-controller="Home" asp-action="Refresh">Refresh </a><text> | </text>*@
+            <a asp-area="" asp-controller="Home" asp-action="Login">LOGIN</a>
+            <a asp-area="" asp-controller="Home" asp-action="Dashboard">DASHBOARD</a>
+           
+            <a asp-area="" asp-controller="Home" asp-action="SignUp">SIGN UP</a>
+            <a asp-area="" asp-controller="Home" asp-action="PortfolioOptions">PORTFOLIO SELECT</a>
+
+            <div class="topnav-right">
+                <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
+            </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>Authors: Mel Kurtz, Coyler Sigety, Taras Matiychuk, University of South Florida</p>
+            <p>Authors: Mel Kurtz, Colyer Sigety, Taras Matiychuk, University of South Florida</p>
         </footer>
     </div>
     @RenderSection("Scripts", required: false)
